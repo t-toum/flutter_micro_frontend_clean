@@ -3,3 +3,7 @@ export '../src/domain/usecases/get_todo_usecase.dart';
 export '../src/domain/entities/todo.dart';
 export '../src/core/usecases/no_params.dart';
 export '../src/core/enums/data_status.dart';
+export '../src/core/error/failures.dart';
+export '../src/core/error/exceptions.dart';
+export '../src/core/usecases/usecase.dart';
+export '../src/core/usecases/synchronous_usecase.dart';

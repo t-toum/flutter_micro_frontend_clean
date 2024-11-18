@@ -2,35 +2,33 @@ import 'package:base_app/src/presentation/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class UsersPage extends StatelessWidget {
+  const UsersPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Page"),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Modular.to.pushNamed("/user");
-            },
-            icon: const Icon(Icons.person),
-          )
-        ],
+        title: const Text("List user"),
       ),
       body: Center(
         child: BlocBuilder<HomeCubit, HomeState>(
           builder: (context, state) {
-            if(state.status == DataStatus.loading){
-              return const CircularProgressIndicator(); 
+            if (state.status == DataStatus.loading) {
+              return const CircularProgressIndicator();
             }
             return ListView.builder(
-              itemCount: state.todos.length,
+              itemCount: state.users.length,
               itemBuilder: (context, index) {
-                final todo = state.todos[index];
+                final user = state.users[index];
                 return ListTile(
-                  title: Text(todo.title),
+                  leading: Image.network(
+                    user.photo,
+                    width: 40,
+                    height: 40,
+                  ),
+                  title: Text(user.name),
+                  subtitle: Text(user.email),
                 );
               },
             );

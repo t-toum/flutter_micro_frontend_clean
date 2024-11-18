@@ -19,6 +19,7 @@ mixin _$HomeState {
   DataStatus get status => throw _privateConstructorUsedError;
   String? get error => throw _privateConstructorUsedError;
   List<Todo> get todos => throw _privateConstructorUsedError;
+  List<User> get users => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -32,7 +33,8 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({DataStatus status, String? error, List<Todo> todos});
+  $Res call(
+      {DataStatus status, String? error, List<Todo> todos, List<User> users});
 }
 
 /// @nodoc
@@ -53,6 +55,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? status = null,
     Object? error = freezed,
     Object? todos = null,
+    Object? users = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -67,6 +70,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.todos
           : todos // ignore: cast_nullable_to_non_nullable
               as List<Todo>,
+      users: null == users
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<User>,
     ) as $Val);
   }
 }
@@ -79,7 +86,8 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({DataStatus status, String? error, List<Todo> todos});
+  $Res call(
+      {DataStatus status, String? error, List<Todo> todos, List<User> users});
 }
 
 /// @nodoc
@@ -98,6 +106,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? status = null,
     Object? error = freezed,
     Object? todos = null,
+    Object? users = null,
   }) {
     return _then(_$HomeStateImpl(
       status: null == status
@@ -112,6 +121,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value._todos
           : todos // ignore: cast_nullable_to_non_nullable
               as List<Todo>,
+      users: null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<User>,
     ));
   }
 }
@@ -122,8 +135,10 @@ class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
       {this.status = DataStatus.initial,
       this.error,
-      final List<Todo> todos = const []})
-      : _todos = todos;
+      final List<Todo> todos = const [],
+      final List<User> users = const []})
+      : _todos = todos,
+        _users = users;
 
   @override
   @JsonKey()
@@ -139,9 +154,18 @@ class _$HomeStateImpl implements _HomeState {
     return EqualUnmodifiableListView(_todos);
   }
 
+  final List<User> _users;
+  @override
+  @JsonKey()
+  List<User> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
+
   @override
   String toString() {
-    return 'HomeState(status: $status, error: $error, todos: $todos)';
+    return 'HomeState(status: $status, error: $error, todos: $todos, users: $users)';
   }
 
   @override
@@ -151,12 +175,17 @@ class _$HomeStateImpl implements _HomeState {
             other is _$HomeStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.error, error) || other.error == error) &&
-            const DeepCollectionEquality().equals(other._todos, _todos));
+            const DeepCollectionEquality().equals(other._todos, _todos) &&
+            const DeepCollectionEquality().equals(other._users, _users));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, status, error, const DeepCollectionEquality().hash(_todos));
+      runtimeType,
+      status,
+      error,
+      const DeepCollectionEquality().hash(_todos),
+      const DeepCollectionEquality().hash(_users));
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -171,7 +200,8 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {final DataStatus status,
       final String? error,
-      final List<Todo> todos}) = _$HomeStateImpl;
+      final List<Todo> todos,
+      final List<User> users}) = _$HomeStateImpl;
 
   @override
   DataStatus get status;
@@ -179,6 +209,8 @@ abstract class _HomeState implements HomeState {
   String? get error;
   @override
   List<Todo> get todos;
+  @override
+  List<User> get users;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
