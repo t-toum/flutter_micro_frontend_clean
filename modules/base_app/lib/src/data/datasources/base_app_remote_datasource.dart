@@ -1,19 +1,19 @@
-import 'package:shared/shared.dart';
+// import 'package:shared/shared.dart';
 
-abstract class BaseAppRemoteDatasource {
-  // Future<void> getTodo();
-}
+// abstract class BaseAppRemoteDatasource {
+//   // Future<void> getTodo();
+// }
 
-class BaseAppRemoteDatasourceImpl implements BaseAppRemoteDatasource {
-  final BaseRestClient client;
+// class BaseAppRemoteDatasourceImpl implements BaseAppRemoteDatasource {
+//   final BaseRestClient client;
 
-  BaseAppRemoteDatasourceImpl(this.client);
-  // @override
-  // Future<void> getTodo() async {
-  //   try{
-  //     final response = await client.getTodo();
-  //   }catch(error){
+//   BaseAppRemoteDatasourceImpl(this.client);
+//   // @override
+//   // Future<void> getTodo() async {
+//   //   try{
+//   //     final response = await client.getTodo();
+//   //   }catch(error){
 
-  //   }
-  // }
-}
+//   //   }
+//   // }
+// }

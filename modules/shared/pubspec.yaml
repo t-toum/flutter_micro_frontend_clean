@@ -16,6 +16,8 @@ dependencies:
   logger: ^2.5.0
   json_annotation: ^4.9.0
   equatable: ^2.0.5
+  dartz: ^0.10.1
+  flutter_bloc: ^8.1.6
 
 dev_dependencies:
   flutter_test:
@@ -24,6 +26,7 @@ dev_dependencies:
   retrofit_generator: ^9.1.5
   build_runner: ^2.4.13
   json_serializable: ^6.8.0
+  
 flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
